@@ -5,8 +5,6 @@
   "sdk": "org.kde.Sdk",
   "command": "muse4",
   "rename-icon": "muse",
-  "rename-desktop-file": "org.musesequencer.Muse4.desktop",
-  "rename-appdata-file": "org.musesequencer.Muse4.appdata.xml",
   "finish-args": [
     /* X11 + XShm access */
     "--share=ipc",
@@ -27,7 +25,7 @@
     "--env=LV2_PATH=$HOME/.lv2:/app/extensions/Plugins/lv2:/app/lib/lv2",
     "--env=DSSI_PATH=/app/extensions/Plugins/dssi",
     "--env=LADSPA_PATH=/app/extensions/Plugins/ladspa:/app/lib/ladspa",
-    "--env=LXVST_PATH=/app/extensions/Plugins/lxvst",
+    "--env=LXVST_PATH=/app/extensions/Plugins/vst",
     "--env=QT_ENABLE_HIGHDPI_SCALING=1"
   ],
   "add-extensions": {
@@ -35,7 +33,7 @@
       "directory": "extensions/Plugins",
       "version": "21.08",
       "add-ld-path": "lib",
-      "merge-dirs": "ladspa;dssi;lv2;lxvst",
+      "merge-dirs": "ladspa;dssi;lv2;vst;lxvst",
       "subdirectories": true,
       "no-autodownload": true
     }
@@ -93,7 +91,7 @@
       "name": "muse4",
       "buildsystem": "cmake-ninja",
       "config-opts": [
-        "-DCMAKE_BUILD_TYPE=release"
+        "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
       ],
       "build-options": {
         "env": [
@@ -107,12 +105,11 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/muse-sequencer/muse/releases/download/4.0.0/muse-4.0.tar.gz",
-          "sha256": "4de670b8e4d7e14c09da26f4d085a7ed452332e030b106c8054685c580bb80dc"
+          "url": "https://github.com/muse-sequencer/muse/releases/download/4.1.0/muse-4.1.tar.gz",
+          "sha256": "f5329169c63f02f0925db3e4853a53433ccd07babda34fae3ba24ad12ec09a65"
         },
         {
           "type": "patch",
-          "strip-components": 2,
           "path": "patches/muse-appdata.patch"
         }
       ]
