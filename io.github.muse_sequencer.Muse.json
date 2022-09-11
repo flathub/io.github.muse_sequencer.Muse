@@ -1,7 +1,7 @@
 {
   "app-id": "io.github.muse_sequencer.Muse",
   "runtime": "org.kde.Platform",
-  "runtime-version": "5.15-21.08",
+  "runtime-version": "5.15-22.08",
   "sdk": "org.kde.Sdk",
   "command": "muse4",
   "rename-icon": "muse",
@@ -15,7 +15,6 @@
     "--device=all",
     /* JACK */
     "--filesystem=xdg-run/pipewire-0",
-    "--system-talk-name=org.freedesktop.RealtimeKit1",
     /* Allow loading, saving files from anywhere (portals don’t work yet) */
     "--filesystem=home",
     /* Allow other instances to see lockfiles */
@@ -31,9 +30,9 @@
   "add-extensions": {
     "org.freedesktop.LinuxAudio.Plugins": {
       "directory": "extensions/Plugins",
-      "version": "21.08",
+      "version": "22.08",
       "add-ld-path": "lib",
-      "merge-dirs": "ladspa;dssi;lv2;vst;lxvst",
+      "merge-dirs": "ladspa;dssi;lv2;vst",
       "subdirectories": true,
       "no-autodownload": true
     }
@@ -49,7 +48,6 @@
   ],
   "modules": [
     "shared-modules/linux-audio/lrdf.json",
-    "shared-modules/linux-audio/jack2.json",
     {
       "name": "audiofile",
       "sources": [
