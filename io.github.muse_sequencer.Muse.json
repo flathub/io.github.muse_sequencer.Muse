@@ -21,7 +21,6 @@
     "--env=TMPDIR=/var/tmp",
     /* On SuSE it seems to be necessary for sound to work */
     "--env=ALSA_CONFIG_PATH=",
-    "--env=LV2_PATH=$HOME/.lv2:/app/extensions/Plugins/lv2:/app/lib/lv2",
     "--env=DSSI_PATH=/app/extensions/Plugins/dssi",
     "--env=LADSPA_PATH=/app/extensions/Plugins/ladspa:/app/lib/ladspa",
     "--env=LXVST_PATH=/app/extensions/Plugins/vst",
@@ -97,6 +96,8 @@
         ]
       },
       "post-install": [
+          "mv ${FLATPAK_DEST}/bin/muse4 ${FLATPAK_DEST}/bin/muse4.bin",
+          "install -Dm755 muse4.sh ${FLATPAK_DEST}/bin/muse4",
           "mv ${FLATPAK_DEST}/share/mime/packages/muse.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml",
           "install -d /app/extensions/Plugins"
       ],
@@ -109,6 +110,15 @@
         {
           "type": "patch",
           "path": "patches/muse-appdata.patch"
+        },
+        {
+          "type": "script",
+          "dest-filename": "muse4.sh",
+          "commands": [
+            "#!/bin/sh",
+            "export LV2_PATH=$HOME/.lv2:/app/extensions/Plugins/lv2:/app/lib/lv2",
+            "exec muse4.bin"
+          ]
         }
       ]
     }
