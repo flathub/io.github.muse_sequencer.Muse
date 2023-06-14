@@ -49,6 +49,9 @@
     "shared-modules/linux-audio/lrdf.json",
     {
       "name": "audiofile",
+      "cleanup": [
+        "*.a"
+      ],
       "sources": [
         {
           "type": "archive",
@@ -105,7 +108,12 @@
         {
           "type": "archive",
           "url": "https://github.com/muse-sequencer/muse/releases/download/4.1.0/muse-4.1.tar.gz",
-          "sha256": "f5329169c63f02f0925db3e4853a53433ccd07babda34fae3ba24ad12ec09a65"
+          "sha256": "f5329169c63f02f0925db3e4853a53433ccd07babda34fae3ba24ad12ec09a65",
+          "x-checker-data": {
+              "type": "anitya",
+              "project-id": 9808,
+              "url-template": "https://github.com/muse-sequencer/muse/releases/download/$version.0/muse-$version.tar.gz"
+          }
         },
         {
           "type": "patch",
