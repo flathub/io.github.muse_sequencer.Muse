@@ -6,20 +6,13 @@
   "command": "muse4",
   "rename-icon": "muse",
   "finish-args": [
-    /* X11 + XShm access */
     "--share=ipc",
     "--socket=x11",
-    /* Note playback */
     "--socket=pulseaudio",
-    /* MIDI */
     "--device=all",
-    /* JACK */
     "--filesystem=xdg-run/pipewire-0",
-    /* Allow loading, saving files from anywhere (portals don’t work yet) */
     "--filesystem=home",
-    /* Allow other instances to see lockfiles */
     "--env=TMPDIR=/var/tmp",
-    /* On SuSE it seems to be necessary for sound to work */
     "--env=ALSA_CONFIG_PATH=",
     "--env=DSSI_PATH=/app/extensions/Plugins/dssi",
     "--env=LADSPA_PATH=/app/extensions/Plugins/ladspa:/app/lib/ladspa",
@@ -107,8 +100,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/muse-sequencer/muse/releases/download/4.1.0/muse-4.1.tar.gz",
-          "sha256": "f5329169c63f02f0925db3e4853a53433ccd07babda34fae3ba24ad12ec09a65",
+          "url": "https://github.com/muse-sequencer/muse/releases/download/4.2.0/muse-4.2.tar.gz",
+          "sha256": "45094ccc8fb017a76b00df2087a885918656099dbf1b369e3e572633eec0a0bb",
           "x-checker-data": {
               "type": "anitya",
               "project-id": 9808,
@@ -123,9 +116,8 @@
           "type": "script",
           "dest-filename": "muse4.sh",
           "commands": [
-            "#!/bin/sh",
             "export LV2_PATH=$HOME/.lv2:/app/extensions/Plugins/lv2:/app/lib/lv2",
-            "exec muse4.bin"
+            "exec muse4.bin \"@\""
           ]
         }
       ]
