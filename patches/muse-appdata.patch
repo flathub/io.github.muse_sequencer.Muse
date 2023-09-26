@@ -2,10 +2,23 @@ diff --git a/muse3/packaging/org.musesequencer.Muse4.appdata.xml b/muse3/packagi
 index e6c9a09f..b3e45c3d 100644
 --- a/packaging/io.github.muse_sequencer.Muse.appdata.xml
 +++ b/packaging/io.github.muse_sequencer.Muse.appdata.xml
-@@ -49,6 +49,7 @@
+@@ -49,6 +49,20 @@
    </provides>
  
    <releases>
++    <release version="4.2.1" date="2023-09-24">
++      <url>https://github.com/muse-sequencer/muse/blob/4.2.1/src/ChangeLog</url>
++      <description>
++        <ul>
++          <li>Fix issue 1247: Fix compilation without MODULES_BUILD_STATIC=1</li>
++          <li>Fixed issue 1243: Slow startup</li>
++          <li>Fixed missing simpledrums MESS synth</li>
++        </ul>
++      </description>
++    </release>
++    <release version="4.2.0" date="2022-09-11">
++      <url>https://github.com/muse-sequencer/muse/blob/4.2.1/src/ChangeLog</url>
++    </release>
 +    <release version="4.1.0" date="2022-04-17" />
      <release version="4.0.0" date="2021-04-24">
        <description>
