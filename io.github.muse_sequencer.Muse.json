@@ -100,8 +100,8 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/muse-sequencer/muse/releases/download/4.2.0/muse-4.2.tar.gz",
-          "sha256": "45094ccc8fb017a76b00df2087a885918656099dbf1b369e3e572633eec0a0bb",
+          "url": "https://github.com/muse-sequencer/muse/releases/download/4.2.1/muse-4.2.1.tar.gz",
+          "sha256": "05b896a885c0fcb5e48f17475516f8f3f8346d4c6425718f011ce7e409e1c5b0",
           "x-checker-data": {
               "type": "anitya",
               "project-id": 9808,
