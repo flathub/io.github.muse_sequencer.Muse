@@ -1,7 +1,7 @@
 {
   "app-id": "io.github.muse_sequencer.Muse",
   "runtime": "org.kde.Platform",
-  "runtime-version": "5.15-22.08",
+  "runtime-version": "5.15-23.08",
   "sdk": "org.kde.Sdk",
   "command": "muse4",
   "rename-icon": "muse",
@@ -22,7 +22,7 @@
   "add-extensions": {
     "org.freedesktop.LinuxAudio.Plugins": {
       "directory": "extensions/Plugins",
-      "version": "22.08",
+      "version": "23.08",
       "add-ld-path": "lib",
       "merge-dirs": "ladspa;dssi;lv2;vst",
       "subdirectories": true,
@@ -101,12 +101,7 @@
         {
           "type": "archive",
           "url": "https://github.com/muse-sequencer/muse/releases/download/4.2.1/muse-4.2.1.tar.gz",
-          "sha256": "05b896a885c0fcb5e48f17475516f8f3f8346d4c6425718f011ce7e409e1c5b0",
-          "x-checker-data": {
-              "type": "anitya",
-              "project-id": 9808,
-              "url-template": "https://github.com/muse-sequencer/muse/releases/download/$version.0/muse-$version.tar.gz"
-          }
+          "sha256": "05b896a885c0fcb5e48f17475516f8f3f8346d4c6425718f011ce7e409e1c5b0"
         },
         {
           "type": "patch",
