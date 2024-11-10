@@ -2,9 +2,10 @@ diff --git a/muse3/packaging/org.musesequencer.Muse4.appdata.xml b/muse3/packagi
 index e6c9a09f..b3e45c3d 100644
 --- a/packaging/io.github.muse_sequencer.Muse.appdata.xml
 +++ b/packaging/io.github.muse_sequencer.Muse.appdata.xml
-@@ -49,6 +49,20 @@
+@@ -49,6 +49,21 @@
    </provides>
- 
+
++  <developer_name>Muse Sequencer Developers</developer_name>
    <releases>
 +    <release version="4.2.1" date="2023-09-24">
 +      <url>https://github.com/muse-sequencer/muse/blob/4.2.1/src/ChangeLog</url>
