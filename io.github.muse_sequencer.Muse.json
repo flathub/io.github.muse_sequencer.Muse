@@ -5,11 +5,12 @@
   "sdk": "org.kde.Sdk",
   "command": "muse4",
   "rename-icon": "muse",
+  "rename-mime-file": "muse.xml",
   "finish-args": [
     "--share=ipc",
     "--socket=x11",
     "--socket=pulseaudio",
-    "--device=all",
+    "--device=dri",
     "--filesystem=xdg-run/pipewire-0",
     "--filesystem=home",
     "--env=TMPDIR=/var/tmp",
@@ -88,15 +89,9 @@
           "-DCMAKE_INSTALL_RPATH=/app/lib/muse-4.2/modules",
           "-DCMAKE_BUILD_WITH_INSTALL_RPATH=ON"
       ],
-      "build-options": {
-        "env": [
-          "LADSPA_PATH=/app/lib/ladspa"
-        ]
-      },
       "post-install": [
-          "mv ${FLATPAK_DEST}/bin/muse4 ${FLATPAK_DEST}/bin/muse4.bin",
+          "mv ${FLATPAK_DEST}/bin/muse4{,.bin}",
           "install -Dm755 muse4.sh ${FLATPAK_DEST}/bin/muse4",
-          "mv ${FLATPAK_DEST}/share/mime/packages/muse.xml ${FLATPAK_DEST}/share/mime/packages/${FLATPAK_ID}.xml",
           "install -d /app/extensions/Plugins"
       ],
       "sources": [
