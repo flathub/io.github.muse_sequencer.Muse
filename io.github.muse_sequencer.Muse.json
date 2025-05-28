@@ -37,15 +37,13 @@
     "/share/man",
     "/share/doc",
     "/share/gtk-doc",
-    "*.la"
+    "*.la",
+    "*.a"
   ],
   "modules": [
     "shared-modules/linux-audio/lrdf.json",
     {
       "name": "audiofile",
-      "cleanup": [
-        "*.a"
-      ],
       "sources": [
         {
           "type": "archive",
@@ -86,7 +84,7 @@
       "buildsystem": "cmake-ninja",
       "config-opts": [
           "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
-          "-DCMAKE_INSTALL_RPATH=/app/lib/muse-4.2/modules",
+          "-DLIB_INSTALL_DIR=/app/lib",
           "-DCMAKE_BUILD_WITH_INSTALL_RPATH=ON"
       ],
       "post-install": [
@@ -104,7 +102,7 @@
             "type": "patch",
             "paths": [
 		"patches/muse-appdata.patch",
-		"patches/muse-rpath.patch"
+		"patches/muse-ninja-build.patch"
 	    ]
         },
         {
@@ -112,7 +110,7 @@
           "dest-filename": "muse4.sh",
           "commands": [
             "export LV2_PATH=$HOME/.lv2:/app/extensions/Plugins/lv2:/app/lib/lv2",
-            "exec muse4.bin \"@\""
+            "exec muse4.bin \"$@\""
           ]
         }
       ]
