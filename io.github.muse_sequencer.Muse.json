@@ -11,7 +11,7 @@
     "--socket=x11",
     "--socket=pulseaudio",
     "--device=dri",
-    "--filesystem=xdg-run/pipewire-0",
+    "--filesystem=xdg-run/pipewire-0:ro",
     "--filesystem=home",
     "--env=TMPDIR=/var/tmp",
     "--env=ALSA_CONFIG_PATH=",
@@ -101,9 +101,9 @@
         {
             "type": "patch",
             "paths": [
-		"patches/muse-appdata.patch",
-		"patches/muse-ninja-build.patch"
-	    ]
+                "patches/muse-appdata.patch",
+                "patches/muse-ninja-build.patch"
+            ]
         },
         {
           "type": "script",
